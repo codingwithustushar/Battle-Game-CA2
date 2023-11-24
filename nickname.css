@@ -83,7 +83,7 @@ input{
     margin-top: 50px;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:900px) {
     body{
         background-image: url("./assets/image\ 1.png");
         background-repeat: no-repeat;
