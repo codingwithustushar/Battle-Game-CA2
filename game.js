@@ -233,10 +233,10 @@ function endGame(winner) {
 
     context.fillStyle = "white";
     context.font = "50px sans-serif";
-    context.fillText(`${winner} Wins!`, boardWidth / 8, boardHeight / 2);
+    context.fillText(`${winner} Wins!`, boardWidth / 10, boardHeight / 2);
 
     context.font = "30px sans-serif";
-    context.fillText("Press 'R' to restart", boardWidth / 8, boardHeight / 2 + 50);
+    context.fillText("Press 'R' to restart", boardWidth / 10, boardHeight / 2 + 50);
 
     document.addEventListener("keydown", restartGame);
 }
