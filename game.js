@@ -2,7 +2,7 @@ var devices = window.innerWidth
 var boardHeight,boardWidth;
 if(devices<600){
     boardHeight=500
-    boardWidth=430
+    boardWidth=360
 }
 else{
     boardHeight=700
@@ -83,6 +83,7 @@ window.onload = function() {
     document.addEventListener("keyup", movePlayer);
     document.addEventListener("touchstart",touchPlayer);
     document.addEventListener("touchmove", touchPlayer);
+    document.addEventListener("touchend", restartGameOntouch);
 }
 
 function update() {
@@ -200,6 +201,9 @@ function touchPlayer(e){
         }else{
             player2.velocityY = 5;
         }
+        else if(e.type === "touchend"){
+            restartGameOntouch();
+        }
     }
 }
 
@@ -251,4 +255,16 @@ function restartGame(e) {
         localStorage.removeItem("player2Score");
     }
 }
+ 
+function restartGameOntouch(){
+    if(gameOver){
+        gameOver = false;
+        player1Score = 0;
+        player2Score = 0;
+        resetGame(1);
+        requestAnimationFrame(update);
 
+        localStorage.removeItem("player1Score");
+        localStorage.removeItem("player2Score");
+    }
+}
