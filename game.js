@@ -201,9 +201,9 @@ function touchPlayer(e){
         }else{
             player2.velocityY = 5;
         }
-        else if(e.type === "touchend"){
-            restartGameOntouch();
-        }
+    }
+    else if(e.type === "touchend"){
+        restartGameOntouch();
     }
 }
 
