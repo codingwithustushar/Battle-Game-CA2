@@ -81,6 +81,8 @@ window.onload = function() {
 
     requestAnimationFrame(update);
     document.addEventListener("keyup", movePlayer);
+    document.addEventListener("touchstart",touchPlayer);
+    document.addEventListener("touchmove", touchPlayer);
 }
 
 function update() {
@@ -182,6 +184,25 @@ function movePlayer(e) {
         player2.velocityY = 5;
     }
 }
+
+function touchPlayer(e){
+    if(e.type === "touchstart" || e.type === "touchmove"){
+
+        if(e.touches[0].clientY<window.innerHeight/2){
+
+            player1.velocityY = -5;
+        }else{
+            player1.velocityY = 5;
+        }
+        if(e.touches[0].clientY<window.innerHeight/2){
+
+            player2.velocityY = -5;
+        }else{
+            player2.velocityY = 5;
+        }
+    }
+}
+
 
 function detectCollision(a, b) {
     return a.x < b.x + b.width &&   //a's top left corner doesn't reach b's top right corner
