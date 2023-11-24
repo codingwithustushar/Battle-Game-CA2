@@ -1,7 +1,12 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background-image: url("./assets/image\ 1.png");
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 .game{
     margin-left: 253px;
