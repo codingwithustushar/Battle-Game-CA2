@@ -27,8 +27,9 @@ const goback = document.getElementById("goback");
 goback.addEventListener("click",function(){
     window.location.href="./index.html"
 })
-const start = document.getElementById("startit");
+const form = document.getElementById("nicknameForm");
 
-start.addEventListener("click",function(){
-    window.location.href="./game.html"
-})
+form.onsubmit=()=>{
+    window.location.href = "./game.html"
+    return false;
+}
